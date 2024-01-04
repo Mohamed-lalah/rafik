@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rafik/ui/screens/login_screeen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
+      debugShowCheckedModeBanner: false,
+     routes:{
+    LoginScreen.routeName: (_)=>LoginScreen(),
+    },
+      initialRoute:LoginScreen.routeName,
     );
   }
 }

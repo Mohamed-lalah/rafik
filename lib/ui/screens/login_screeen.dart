@@ -13,6 +13,7 @@ class LoginScreen extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return  Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primiaryLogin,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -65,7 +66,7 @@ class LoginScreen extends StatelessWidget {
           Padding(
             padding:  EdgeInsets.only(left: width*0.6,bottom: height*0.01),
             child:TextButton(
-              child :Text("Forget Your Password?",
+              child :Text("Forget Your Password ?",
                   style: AppTheme.smallDetails)
               ,   onPressed: (){},
             )
@@ -82,15 +83,32 @@ class LoginScreen extends StatelessWidget {
                 onPressed: (){},
                 child:Text("Log In",style: AppTheme.login_Elevated_Button,) ),
           ),
-          const Row(
+            Row(
+             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("you don't have account"),
-              Text("create one "),
+              Text("You don't have account",
+                style:AppTheme.row_Small_Details,),
+              Text("Create one ",style: AppTheme.smallDetails.copyWith(
+                color: AppColors.login_Button_Color,
+                decorationColor: AppColors.login_Button_Color
+              ),),
             ],
           ),
           SizedBox(height: 10,),
-          Text("By countouing you agrees to your terms of service "),
-          Text("Read out Privacy policy")
+         Row(mainAxisAlignment: MainAxisAlignment.center,
+           children: [
+             Text("By continouing , you agree to our ",
+             style: AppTheme.row_Small_Details,),
+             Text("Terms of Service",style: AppTheme.smallDetails,),
+           ],
+         ),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Read Our ",
+                style: AppTheme.row_Small_Details,),
+              Text("Privacy Policy",style: AppTheme.smallDetails,),
+            ],
+          ),
 
     ]),
     );

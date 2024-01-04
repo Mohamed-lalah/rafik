@@ -24,7 +24,7 @@ abstract class AppTheme {
       textStyle: const TextStyle(
           decoration: TextDecoration.underline,
           decorationColor: AppColors.smallDetail,
-          fontSize: 10,
+          fontSize: 11,
           fontWeight: FontWeight.w500,
           color:    AppColors.smallDetail)
   );
@@ -36,6 +36,13 @@ abstract class AppTheme {
           color:   AppColors.white)
   );
 
+
+  static TextStyle row_Small_Details = GoogleFonts.inter(
+      textStyle: const TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.w500,
+          color:    AppColors.black)
+  );
 
 
 

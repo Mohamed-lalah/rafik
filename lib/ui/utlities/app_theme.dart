@@ -44,6 +44,27 @@ abstract class AppTheme {
           color:    AppColors.black)
   );
 
+  static TextStyle login_hint_Style = GoogleFonts.inter(
+      textStyle: const TextStyle(fontSize: 14.69,
+          fontWeight: FontWeight.w500,
+          color:    AppColors.login_hint_Color)
+  );
+
+  static TextStyle memoryTitleStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color:    AppColors.memoryTitleColor)
+  );
+
+  static TextStyle memory_Sub_TitleStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color:    AppColors.memoryTitleColor)
+  );
+
+
+
+
 
 
 

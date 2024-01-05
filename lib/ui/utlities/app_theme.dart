@@ -87,6 +87,21 @@ abstract class AppTheme {
   );
 
 
+  static TextStyle helloStyle = GoogleFonts.inter(
+      textStyle: const TextStyle(fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color:    AppColors.smallDetail)
+  );
+
+
+  static TextStyle memoriesStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color:    AppColors.memory_button_color)
+  );
+
+
+
 
 
 

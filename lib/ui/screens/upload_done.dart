@@ -4,7 +4,7 @@ import 'package:rafik/ui/utlities/app_colors.dart';
 import 'package:rafik/ui/utlities/app_theme.dart';
 
 class UploadDone extends StatelessWidget {
-  const UploadDone({super.key});
+
 
   static const String routeName = "UploadDone";
 
@@ -13,7 +13,7 @@ class UploadDone extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Container(
-      color: AppColors.transparent,
+      color: AppColors.grey,
       height: height * 0.69,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -39,7 +39,8 @@ class UploadDone extends StatelessWidget {
                 ),),
               Spacer(),
             ],
-          ),  //the first row
+          ),
+          SizedBox(height: height*0.05,),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -47,42 +48,50 @@ class UploadDone extends StatelessWidget {
                   Stack(
                     children: [
                       Padding(
-                        padding:  EdgeInsets.only(top: height*0.15,left: width*0.43,),
+                        padding:  EdgeInsets.only(bottom: height*0.01,left: width*0.43,),
                         child: Image.asset("assets/images/Ellipse 1x.png"),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(top: height*0.1,left: width*0.47,),
+                        padding:  EdgeInsets.only(bottom: height*0.15,left: width*0.44,
+                        top: height*0.0097),
                         child: const Icon(
-                          Icons.check,size: 40,
-                          color: AppColors.black,),
+                          Icons.check,size: 60,
+                          color: AppColors.white,),
                       )
                     ],
                   ),
 
-                Container(
-                  width: width*0.7,
-                  height: height*0.2,
-                  color: AppColors.white,
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      labelText: "text",
-                      border: UnderlineInputBorder(
-                        borderRadius: BorderRadius.circular(13)
-                      )
+                Padding(
+                  padding: const EdgeInsets.all(19.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color:AppColors.white,
+                      borderRadius: BorderRadius.circular(13)
                     ),
-                  )
+                    width: width*0.79,
+                    height: height*0.2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text("add text ",style: AppTheme.inputTextStyle,),
+                    )
+                  ),
                 ),
                 Container(
-                  height: 39,
-                  width: 365,
-                  padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                  padding:  EdgeInsets.fromLTRB(width*0.6, 0, 10, 0),
                   child: ElevatedButton(
                     onPressed: (){},
                     style: ButtonStyle(
                       backgroundColor:
                       MaterialStateProperty.all<Color>(AppColors.login_Button_Color),
                     ),
-                    child: Text("confirm"),
+                    child: TextButton(
+                      onPressed: (){
+                        Navigator.pop(context);
+                      },
+                      child: Text("Confirm",style: AppTheme.memory_Sub_TitleStyle
+                        .copyWith(fontWeight: FontWeight.w700,
+                      color: AppColors.white),),
+                    ),
                   ),
                 ),
 

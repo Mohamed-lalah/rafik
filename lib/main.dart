@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
        LoginScreen.routeName: (_)=>LoginScreen(),
        RegisterScreen.routeName: (_)=>RegisterScreen(),
        MemoryScreen.routeName: (_)=>MemoryScreen(),
+
     },
       initialRoute:MemoryScreen.routeName,
     );

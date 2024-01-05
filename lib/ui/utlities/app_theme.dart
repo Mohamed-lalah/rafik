@@ -68,6 +68,14 @@ abstract class AppTheme {
           color:    AppColors.smallDetail)
   );
 
+  static TextStyle inputTextStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 12,
+          fontWeight: FontWeight.w400,
+          color:    AppColors.ligthGrey)
+  );
+
+
+
 
 
 

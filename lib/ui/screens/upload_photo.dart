@@ -5,7 +5,7 @@ import 'package:rafik/ui/utlities/app_colors.dart';
 import 'package:rafik/ui/utlities/app_theme.dart';
 
 class UploadPhoto extends StatefulWidget {
-  const UploadPhoto({super.key});
+
 
   @override
   State<UploadPhoto> createState() => _UploadPhotoState();

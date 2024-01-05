@@ -22,4 +22,10 @@ abstract class AppColors {
   static const Color black= Colors.black;
   static const Color grey = Color(0xffC8C9CB);
   static const Color ligthGrey= Color(0xffA7A7A7);
+  static const Color premiumColor= Color(0xff482D4DF);
+  static const Color dropDownColor= Color(0xff181059);
+  static const Color subscribeColor= Color(0xff82D4DF);
+  static const Color proColor= Color(0xffF6F5FA);
+
+
 }

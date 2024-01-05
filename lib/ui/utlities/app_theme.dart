@@ -74,6 +74,18 @@ abstract class AppTheme {
           color:    AppColors.ligthGrey)
   );
 
+  static TextStyle dropDownStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color:    AppColors.dropDownColor)
+  );
+
+  static TextStyle dollarStyle = GoogleFonts.inter(
+      textStyle: const TextStyle(fontSize: 13,
+          fontWeight: FontWeight.w700,
+          color:    AppColors.subscribeColor)
+  );
+
 
 
 

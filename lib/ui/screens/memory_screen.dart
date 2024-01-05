@@ -1,13 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rafik/ui/screens/upload_photo.dart';
 
 import '../utlities/app_colors.dart';
 import '../utlities/app_theme.dart';
 import '../widgets/memories_widget.dart';
 
-class MemoryScreen extends StatelessWidget {
+class MemoryScreen extends StatefulWidget {
   const MemoryScreen({super.key});
   static const String routeName = "MemoryScreen";
+
+  @override
+  State<MemoryScreen> createState() => _MemoryScreenState();
+}
+
+class _MemoryScreenState extends State<MemoryScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -111,7 +118,15 @@ class MemoryScreen extends StatelessWidget {
                           backgroundColor:
                           MaterialStateProperty.all<Color>(AppColors.login_Button_Color),
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          showModalBottomSheet(context: context,
+                              isScrollControlled: true,
+                              builder: (_) => Padding(
+                                padding: MediaQuery.of(context).viewInsets,
+                                child:UploadPhoto(),
+                              ));
+
+                        },
                         child:Row(
                           children: [
                             Text("Upload Photo",style: AppTheme.memory_Sub_TitleStyle
@@ -159,8 +174,9 @@ class MemoryScreen extends StatelessWidget {
           ],
         ),
       )
-      
-     
+
+
     );
   }
+
 }

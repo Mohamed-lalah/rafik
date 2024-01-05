@@ -15,7 +15,7 @@ class UploadPhoto extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-             Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
@@ -41,7 +41,7 @@ class UploadPhoto extends StatelessWidget {
                     Padding(
                       padding:  EdgeInsets.only(top: height*0.511,left: width*0.47,),
                       child: Icon(Icons.camera_alt_outlined,size: 40,
-                      color: AppColors.white,),
+                        color: AppColors.white,),
                     )
                   ],
                 )

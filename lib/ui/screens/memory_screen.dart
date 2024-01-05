@@ -124,7 +124,8 @@ class _MemoryScreenState extends State<MemoryScreen> {
                               builder: (_) => Padding(
                                 padding: MediaQuery.of(context).viewInsets,
                                 child:UploadPhoto(),
-                              ));
+                              )
+                          );
 
                         },
                         child:Row(

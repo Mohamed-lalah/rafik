@@ -16,6 +16,7 @@ abstract class AppColors {
   static const Color login_hint_Color= Color(0xffACACAC);
   static const Color memoryTitleColor= Color(0xff212132);
   static const Color memory_button_color= Color(0xff49A4AD);
+  static const Color containerUpload= Color(0xffF2F2F2);
 
   static const Color smallDetail= Color(0xffF7A947);
   static const Color black= Colors.black;

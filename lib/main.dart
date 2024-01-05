@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rafik/ui/screens/login_screeen.dart';
 import 'package:rafik/ui/screens/memory_screen.dart';
 import 'package:rafik/ui/screens/register_screen.dart';
+import 'package:rafik/ui/screens/upload_done.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,9 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
      routes:{
-    LoginScreen.routeName: (_)=>LoginScreen(),
-    RegisterScreen.routeName:  (_)=>RegisterScreen(),
-       MemoryScreen.routeName:  (_)=>MemoryScreen(),
+       LoginScreen.routeName: (_)=>LoginScreen(),
+       RegisterScreen.routeName: (_)=>RegisterScreen(),
+       MemoryScreen.routeName: (_)=>MemoryScreen(),
     },
       initialRoute:MemoryScreen.routeName,
     );

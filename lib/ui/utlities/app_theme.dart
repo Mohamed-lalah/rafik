@@ -62,6 +62,12 @@ abstract class AppTheme {
           color:    AppColors.memoryTitleColor)
   );
 
+  static TextStyle memory_cancel_style = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 14,
+          fontWeight: FontWeight.w600,
+          color:    AppColors.smallDetail)
+  );
+
 
 
 

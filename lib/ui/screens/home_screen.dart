@@ -6,9 +6,21 @@ import '../utlities/app_theme.dart';
 import '../widgets/language_widget.dart';
 import '../widgets/memories_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   static const String routeName = "Subscribe plan";
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int currenttabindex=0;
+
+  List<Widget> tabs = [
+    HomeScreen(),
+
+  ];
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -20,7 +32,7 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-           SizedBox(height: height*0.3,),
+           SizedBox(height: height*0.2,),
            Padding(
              padding: const EdgeInsets.only(right: 70),
              child: GestureDetector(
@@ -113,40 +125,6 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                   Container(
-                     width: 148,
-                     height: 34,
-                     child:   Row(
-                       children: [
-                         Padding(
-                           padding: EdgeInsets.all(8.0),
-                           child: Text("Mama",style: AppTheme.inputTextStyle.copyWith(
-                           fontSize: 14,
-                               fontWeight: FontWeight.w300,
-                               color: AppColors.memory_button_color
-                           ),),
-                         ),
-                         Padding(
-                           padding: EdgeInsets.all(8.0),
-                           child: VerticalDivider(width: 1,color: AppColors.memory_button_color,
-                           thickness: 1),
-                         ),
-                         Spacer(),
-                         Text("1:02",style: AppTheme.inputTextStyle.copyWith(
-                           fontSize: 14,
-                           fontWeight: FontWeight.w400,
-                           color: AppColors.memory_button_color
-                         ),),
-                         Spacer(),
-                         Icon(Icons.play_arrow,color: AppColors.memory_button_color,)
-                       ],
-                     ),
-                     decoration: BoxDecoration(
-                       color: AppColors.grey,
-                       borderRadius: BorderRadius.circular(12)
-                     ),
-                   ),
-                    SizedBox(width: width*0.05,),
                     Container(
                       width: 148,
                       height: 34,
@@ -176,8 +154,12 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       decoration: BoxDecoration(
-                          color: AppColors.grey,
-                          borderRadius: BorderRadius.circular(12)
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                            color: AppColors.memory_button_color
+                        ),
+
                       ),
                     ),
                     SizedBox(width: width*0.05,),
@@ -210,8 +192,50 @@ class HomeScreen extends StatelessWidget {
                         ],
                       ),
                       decoration: BoxDecoration(
-                          color: AppColors.grey,
-                          borderRadius: BorderRadius.circular(12)
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                            color: AppColors.memory_button_color
+                        ),
+
+                      ),
+                    ),
+                    SizedBox(width: width*0.05,),
+                    Container(
+                      width: 148,
+                      height: 34,
+                      child:   Row(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text("Mama",style: AppTheme.inputTextStyle.copyWith(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w300,
+                                color: AppColors.memory_button_color
+                            ),),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: VerticalDivider(width: 1,color: AppColors.memory_button_color,
+                                thickness: 1),
+                          ),
+                          Spacer(),
+                          Text("1:02",style: AppTheme.inputTextStyle.copyWith(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColors.memory_button_color
+                          ),),
+                          Spacer(),
+                          Icon(Icons.play_arrow,color: AppColors.memory_button_color,)
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                            color: AppColors.memory_button_color
+                        ),
+
                       ),
                     ),
                     SizedBox(width: width*0.05,),
@@ -273,8 +297,47 @@ class HomeScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(13),
             child: Container(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      children: [
+                        Image.asset("assets/images/Ellipse 26.png"),
+                        SizedBox(width: width*0.03,),
+                        Text("Dr.Noguera",style: AppTheme.memoriesStyle.copyWith(
+                          color: AppColors.black,fontWeight: FontWeight.w600
+                        ),),
+                        SizedBox(width: width*0.03,),
+                        Text("12:37",style: AppTheme.memoriesStyle.copyWith(
+                            color: AppColors.grey,fontWeight: FontWeight.w300,fontSize: 14)),
+                      ],
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0,left: 8.0),
+                        child: Text("Semana 1: ",style: AppTheme.memoriesStyle.copyWith(
+                            color: AppColors.black,fontWeight: FontWeight.w600
+                        ),),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0,left: 12 ),
+                        child: Text("Buenos Dias chicos ,os dejo la trapaja  ",style: AppTheme.memoriesStyle.copyWith(
+                            color: AppColors.black,fontWeight: FontWeight.w600
+                        ),),
+                      )
+                    ],
+                  ),
+                ],
+              ),
               width: 343,
-              height: 117,
+              height: 120,
               decoration: BoxDecoration(
                 color: AppColors.white,
                 border: Border.all(
@@ -283,11 +346,31 @@ class HomeScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(30)
               ),
             ),
-          )
+          ),
+          buildBottomNav(),
 
 
         ],
       ),
     );
   }
+
+  Widget buildBottomNav() => Theme(
+    data: Theme.of(context).copyWith(canvasColor: Theme.of(context).primaryColor),
+    child: BottomNavigationBar(
+
+      currentIndex: currenttabindex,
+      onTap: (index){
+        currenttabindex= index;
+        setState(() {});
+      },
+      items: [
+        BottomNavigationBarItem(icon:Image.asset("assets/images/home 1x.png"),label: "home"),
+        BottomNavigationBarItem(icon:Image.asset("assets/images/setting1x.png"),label: "Emergency"),
+        BottomNavigationBarItem(icon:Image.asset("assets/images/informs 1x.png"),label: "Inform"),
+        BottomNavigationBarItem(icon:Image.asset("assets/images/message 1x.png"),label: "Message"),
+
+      ],
+    ),
+  );
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rafik/ui/screens/home_screen.dart';
+import 'package:rafik/ui/screens/languages_screen.dart';
 import 'package:rafik/ui/screens/login_screeen.dart';
 import 'package:rafik/ui/screens/memory_screen.dart';
 import 'package:rafik/ui/screens/record_screeen.dart';
@@ -30,7 +31,9 @@ class MyApp extends StatelessWidget {
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        VoiceScreen.routeName: (_)=>VoiceScreen(),
        RecordScreen.routeName: (_)=>RecordScreen(),
+       LanguageScreen.routeName: (_)=>LanguageScreen(),
        ListWidget.routeName: (_)=>ListWidget(),
+
 
 
 

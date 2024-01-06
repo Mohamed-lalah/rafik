@@ -113,6 +113,13 @@ abstract class AppTheme {
           color:    AppColors.subscribeColor)
   );
 
+  static TextStyle languageStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 15,
+          fontWeight: FontWeight.w400,
+          color:    AppColors.login_Info_Color)
+  );
+
+
 
 
 

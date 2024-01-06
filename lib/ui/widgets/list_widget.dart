@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rafik/ui/screens/languages_screen.dart';
 
 import '../utlities/app_colors.dart';
 import '../utlities/app_theme.dart';
@@ -24,9 +25,14 @@ class ListWidget extends StatelessWidget {
             ),
             SizedBox(height: height*0.02,),
             Center(
-              child: Text("Language",style: AppTheme.memoriesStyle.copyWith(
-               fontSize: 20, color: AppColors.login_Info_Color
-              ),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushNamed(context, LanguageScreen.routeName);
+                },
+                child: Text("Language",style: AppTheme.memoriesStyle.copyWith(
+                 fontSize: 20, color: AppColors.login_Info_Color
+                ),
+                ),
               ),
             ),
             SizedBox(height: height*0.021,),
@@ -43,7 +49,7 @@ class ListWidget extends StatelessWidget {
                 ),),
               ),
             ),
-            SizedBox(height: height*0.021,),
+            SizedBox(height: height*0.02,),
             Divider(
               color: AppColors.login_Info_Color,
               thickness: 0.3,
@@ -57,7 +63,7 @@ class ListWidget extends StatelessWidget {
                 ),),
               ),
             ),
-            SizedBox(height: height*0.021,),
+            SizedBox(height: height*0.02,),
             Divider(
               color: AppColors.login_Info_Color,
               thickness: 0.3,
@@ -71,6 +77,17 @@ class ListWidget extends StatelessWidget {
             ),),
                ),
              ),
+            Spacer(),
+            Center(child: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: TextButton(
+                onPressed: (){},
+                child: Text("Log Out ",style: AppTheme.minutesStyle.copyWith(
+                  fontSize: 20,
+                  color: AppColors.rectColor
+                ),),
+              ),
+            ))
 
           ],
         ),

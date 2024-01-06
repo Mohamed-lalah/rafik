@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
 
 
      },
-      initialRoute: InformsScreen.routeName,
+      initialRoute: RegisterScreen.routeName,
     );
   }
 }

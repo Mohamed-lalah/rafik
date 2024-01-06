@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../utlities/app_colors.dart';
 import '../utlities/app_theme.dart';
-import '../widgets/language_widget.dart';
+import '../widgets/list_widget.dart';
 import '../widgets/memories_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
              padding: const EdgeInsets.only(right: 70),
              child: GestureDetector(
                onTap: (){
-             LanguageWidget();},
+             ListWidget();},
              child: Padding(
              padding:  EdgeInsets.only(bottom:10,left: 12,),
              child: Image.asset("assets/images/group 1x.png",),

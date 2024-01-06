@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:rafik/ui/widgets/language_widget.dart';
+import 'package:rafik/ui/widgets/list_widget.dart';
 
 import '../utlities/app_colors.dart';
 import '../utlities/app_theme.dart';
 
 class SubscribeBlan extends StatelessWidget {
-  const SubscribeBlan({super.key});
+
   static const String routeName = "Subscribe plan";
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,9 @@ class SubscribeBlan extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: height*0.1,),
-            GestureDetector(
+            InkWell(
                 onTap: (){
-                  LanguageWidget();
+                 Navigator.pushNamed(context, ListWidget.routeName);
                 },
                 child: Padding(
                   padding:  EdgeInsets.only(bottom:10,left: 12,right: width*0.8),

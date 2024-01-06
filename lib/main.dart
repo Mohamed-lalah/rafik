@@ -6,6 +6,7 @@ import 'package:rafik/ui/screens/record_screeen.dart';
 import 'package:rafik/ui/screens/register_screen.dart';
 import 'package:rafik/ui/screens/subscribe_plan_screen.dart';
 import 'package:rafik/ui/screens/voice_screen.dart';
+import 'package:rafik/ui/widgets/list_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,13 +26,16 @@ class MyApp extends StatelessWidget {
        MemoryScreen.routeName: (_)=>MemoryScreen(),
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        HomeScreen.routeName: (_)=>HomeScreen(),
+
+       SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        VoiceScreen.routeName: (_)=>VoiceScreen(),
        RecordScreen.routeName: (_)=>RecordScreen(),
+       ListWidget.routeName: (_)=>ListWidget(),
 
 
 
      },
-      initialRoute: VoiceScreen.routeName,
+      initialRoute: ListWidget.routeName,
     );
   }
 }

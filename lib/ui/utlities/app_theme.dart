@@ -119,6 +119,12 @@ abstract class AppTheme {
           color:    AppColors.login_Info_Color)
   );
 
+  static TextStyle informStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color:    AppColors.informsColor)
+  );
+
 
 
 

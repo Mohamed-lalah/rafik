@@ -29,6 +29,7 @@ abstract class AppColors {
   static const Color navColor = Color (0xffDAD7E0);
   static const Color  backGroundColor = Color (0xffFFFFFF);
   static const Color  rectColor = Color (0xffF29C35);
+  static const Color  informsColor= Color(0xff000000);
 
 
 }

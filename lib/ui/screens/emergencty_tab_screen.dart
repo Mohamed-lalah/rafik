@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rafik/ui/screens/emergency_state_screen.dart';
+import 'package:swipeable_button_view/swipeable_button_view.dart';
 
-class EmergencyTab extends StatelessWidget {
+class EmergencyTab extends StatefulWidget {
   static const String routeName = "EmergencyTab";
 
   const EmergencyTab({super.key});
+
+  @override
+  State<EmergencyTab> createState() => _EmergencyTabState();
+}
+
+class _EmergencyTabState extends State<EmergencyTab> {
+  bool isFinished = false;
 
   @override
   Widget build(BuildContext context) {
@@ -12,179 +21,216 @@ class EmergencyTab extends StatelessWidget {
     var width = MediaQuery.of(context).size.height;
 
     return Material(
-      type: MaterialType.transparency,
-      child: Container(
-        color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 18,
-            ),
-            Container(
-              margin: const EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                  color: const Color(0xffF7A947),
-                  borderRadius: BorderRadius.circular(40)),
-              child: IconButton(
-                  icon: const Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {}),
-            ),
-            Container(
-              height: height * .31,
-              decoration: BoxDecoration(
-                  color: const Color(0xffE76E13),
-                  borderRadius: BorderRadius.circular(16)),
-              margin: const EdgeInsets.all(15),
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Emergency Information",
-                        style: GoogleFonts.baloo2(
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontWeight: FontWeight.normal),
+        type: MaterialType.transparency,
+        child: Container(
+            color: Colors.white,
+            child:
+            SingleChildScrollView(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                const SizedBox(
+                  height: 18,
+                ),
+                Container(
+                  margin: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                      color: const Color(0xffF7A947),
+                      borderRadius: BorderRadius.circular(40)),
+                  child: IconButton(
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
                       ),
-                      GestureDetector(
-                        child: const Icon(
-                          Icons.settings,
-                          color: Colors.white,
+                      onPressed: () {}),
+                ),
+                Container(
+                  height: height * .31,
+                  decoration: BoxDecoration(
+                      color: const Color(0xffE76E13),
+                      borderRadius: BorderRadius.circular(16)),
+                  margin: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Emergency Information",
+                            style: GoogleFonts.baloo2(
+                                fontSize: 14,
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal),
+                          ),
+                          GestureDetector(
+                            child: const Icon(
+                              Icons.settings,
+                              color: Colors.white,
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.only(
+                            left: 10, right: 10, top: 12, bottom: 12),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16)),
+                        child: Column(
+                          children: [
+                            buildInfoItem(
+                                Icons.person, "Name", "yahya abdelaziz"),
+                            buildInfoItem(Icons.local_fire_department_sharp,
+                                "Blood type", "yahya abdelaziz"),
+                            buildInfoItem(
+                                Icons.person, "Allergies", "yahya abdelaziz"),
+                            buildInfoItem(
+                                Icons.plus_one, "Medications", "yahya abdelaziz"),
+                            buildInfoItem(
+                                Icons.home, "Address", "yahya abdelaziz"),
+                            buildInfoItem(Icons.event_note_sharp, "Medical notes",
+                                "yahya abdelaziz"),
+                          ],
                         ),
                       )
                     ],
                   ),
-                  Container(
-                    margin: const EdgeInsets.all(10),
-                    padding: const EdgeInsets.only(
-                        left: 10, right: 10, top: 12, bottom: 12),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(16)),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  margin: const EdgeInsets.all(15),
+                  height: height * .40,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(18),
+                    border: Border.all(
+                      width: 2,
+                      color: const Color(
+                          0xffE76E13), //                   <--- border width here
+                    ),
+                  ),
+                  child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        buildInfoItem(Icons.person, "Name", "yahya abdelaziz"),
-                        buildInfoItem(Icons.local_fire_department_sharp,
-                            "Blood type", "yahya abdelaziz"),
-                        buildInfoItem(
-                            Icons.person, "Allergies", "yahya abdelaziz"),
-                        buildInfoItem(
-                            Icons.plus_one, "Medications", "yahya abdelaziz"),
-                        buildInfoItem(Icons.home, "Address", "yahya abdelaziz"),
-                        buildInfoItem(Icons.event_note_sharp, "Medical notes",
-                            "yahya abdelaziz"),
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            Container(
-              margin: const EdgeInsets.all(15),
-              height: height * .40,
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
-                border: Border.all(
-                  width: 2,
-                  color: const Color(
-                      0xffE76E13), //                   <--- border width here
-                ),
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.call,
-                                color: Color(0xffE76E13),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                              child: Row(
+                                children: [
+                                  const Icon(
+                                    Icons.call,
+                                    color: Color(0xffE76E13),
+                                  ),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    "Emergency Contact",
+                                    style: GoogleFonts.baloo2(
+                                        fontSize: 14,
+                                        color: const Color(0xffE76E13),
+                                        fontWeight: FontWeight.normal),
+                                  ),
+                                ],
                               ),
-                              const SizedBox(width: 8),
-                              Text(
-                                "Emergency Contact",
+                            ),
+                            SizedBox(
+                              width: width * .10,
+                            ),
+                            GestureDetector(
+                              child: Text(
+                                "Edit",
                                 style: GoogleFonts.baloo2(
-                                    fontSize: 14,
-                                    color: const Color(0xffE76E13),
+                                    fontSize: 11,
+                                    color: Colors.black,
                                     fontWeight: FontWeight.normal),
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(12),
+                          child: const Divider(
+                            thickness: 2,
+                            color: Color(0xffE76E13),
                           ),
                         ),
-                        SizedBox(
-                          width: width * .10,
-                        ),
-                        GestureDetector(
-                          child: Text(
-                            "Edit",
-                            style: GoogleFonts.baloo2(
-                                fontSize: 11,
-                                color: Colors.black,
-                                fontWeight: FontWeight.normal),
-                          ),
-                        ),
+                        Column(
+                          children: [
+                            buildEmerContactRow("assets/images/person.png",
+                                "yahya abdelaziz", "father", "0122222222"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            buildEmerContactRow("assets/images/person.png",
+                                "Eslam Ahmed", "son", "0122243522"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            buildEmerContactRow("assets/images/person.png",
+                                "Asmaa sherif", "Brother", "0112322222"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            buildEmerContactRow("assets/images/person.png",
+                                "Mahmoud elkholy", "Grand", "0129082222"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            buildEmerContactRow("assets/images/person.png",
+                                "Eslam Ahmed", "son", "0122243522"),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            buildEmerContactRow("assets/images/person.png",
+                                "Asmaa sherif", "Brother", "0112322222"),
+                          ],
+                        )
                       ],
                     ),
-                    Container(
-                      margin: const EdgeInsets.all(12),
-                      child: const Divider(
-                        thickness: 2,
-                        color: Color(0xffE76E13),
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        buildEmerContactRow("assets/images/person.png",
-                            "yahya abdelaziz", "father", "0122222222"),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        buildEmerContactRow("assets/images/person.png",
-                            "Eslam Ahmed", "son", "0122243522"),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        buildEmerContactRow("assets/images/person.png",
-                            "Asmaa sherif", "Brother", "0112322222"),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        buildEmerContactRow("assets/images/person.png",
-                            "Mahmoud elkholy", "Grand", "0129082222"),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        buildEmerContactRow("assets/images/person.png",
-                            "Eslam Ahmed", "son", "0122243522"),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        buildEmerContactRow("assets/images/person.png",
-                            "Asmaa sherif", "Brother", "0112322222"),
-                      ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, EmergencyState.routeName);
+                      },
+                      child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 40, vertical: 25),
+                          child: SwipeableButtonView(
+                            buttonWidget: Container(
+                              child: const Icon(
+                                Icons.arrow_forward_ios_rounded,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            activeColor: const Color(0xffF7A947),
+                            isFinished: isFinished,
+                            onWaitingProcess: () {
+                              Future.delayed(const Duration(seconds: 2), () {
+                                setState(() {
+                                  isFinished = true;
+                                });
+                              });
+                            },
+                            onFinish: () async {
+                              setState(() {
+                                isFinished = false;
+                              });
+                            }, buttonText: "Emergency",)),
                     )
                   ],
                 ),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
+              ]),
+            )));
   }
 
   buildInfoItem(IconData ic, String infoType, String infoAnswer) {

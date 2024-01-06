@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rafik/ui/screens/emergencty_tab_screen.dart';
+import 'package:rafik/ui/screens/informs_screen.dart';
 
 import '../utlities/app_colors.dart';
 import '../utlities/app_theme.dart';
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> tabs = [
     HomeScreen(),
     EmergencyTab(),
-
+    InformsScreen(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rafik/ui/screens/home_screen.dart';
 import 'package:rafik/ui/screens/register_screen.dart';
 
 import '../utlities/app_colors.dart';
@@ -104,7 +105,9 @@ class LoginScreen extends StatelessWidget {
                   backgroundColor:
                   MaterialStateProperty.all<Color>(AppColors.login_Button_Color),
                 ),
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+                },
                 child:Text("Log In",style: AppTheme.login_Elevated_Button,) ),
           ),
             Row(

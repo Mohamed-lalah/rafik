@@ -1,204 +1,122 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:rafik/ui/screens/cbs_screen.dart';
 
-class InformsTab extends StatelessWidget {
-  static const String routeName = "InformsTab";
-  static const List<String> langDropdownValues = ["500", "600", "700", "800"];
-  final List<ChartData> chartDataCbc = [
-    ChartData(2010, 0),
-    ChartData(2011, 10),
-    ChartData(2012, 20),
-    ChartData(2013, 30),
-    ChartData(2014, 40)
-  ];
-  final List<ChartData> chartDataHemo = [
-    ChartData(1, 35),
-    ChartData(2, 23),
-    ChartData(3, 34),
-    ChartData(4, 25),
-    ChartData(5, 40)
-  ];
+import '../utlities/app_colors.dart';
+import '../utlities/app_theme.dart';
 
-  InformsTab({super.key});
+class InformsScreen extends StatelessWidget {
+  const InformsScreen({super.key});
+  static const String routeName = "Informs Screen";
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-          child: Expanded(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * .30,
-                      decoration: BoxDecoration(
-                        borderRadius:
-                        BorderRadius.only(bottomRight: Radius.circular(30)),
-                        image: DecorationImage(
-                          image: AssetImage('assets/images/back_info.png'),
-                          fit: BoxFit.cover,
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    var value = -1;
+    return  Scaffold(
+        backgroundColor: AppColors.backGroundColor,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: DropdownButtonFormField(
+                    iconSize: 0,
+                    decoration: InputDecoration(
+                        focusColor: AppColors.grey,
+                        suffixIcon: Icon(
+                          Icons.arrow_drop_down_circle_sharp,
+                          color: AppColors.grey,
                         ),
-                      ),
+                        fillColor: Colors.white,
+                        focusedBorder:OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                                color: AppColors.grey
+                            )
+                        ) ,
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(
+                              color: AppColors.grey,
+                            )
+                        )
                     ),
-                    // Background Image
-                    Positioned(
-                      top: 50,
-                      left: 10,
-                      child: Text(
-                        "Ahmed Khaled",
-                        style: GoogleFonts.openSans(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                    Positioned(
-                      bottom: 20,
-                      left: 0,
-                      right: 0,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Container(
-                            width: MediaQuery.of(context).size.width * .35,
-                            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15.0),
-                              border: Border.all(
-                                  color: Colors.lightBlueAccent,
-                                  style: BorderStyle.solid,
-                                  width: 0.80),
-                            ),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton(
-                                hint: const Text('Enter'),
-                                items: langDropdownValues
-                                    .map((value) => DropdownMenuItem(
-                                  child: Text(value),
-                                  value: value,
-                                ))
-                                    .toList(),
-                                onChanged: (_) {},
-                                isExpanded: true,
-                                value: '500',
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 80.0,
-                            height: 80.0,
-                            decoration: BoxDecoration(
-                              color: const Color(0xff7c94b6),
-                              image: const DecorationImage(
-                                image:
-                                NetworkImage('http://i.imgur.com/QSev0hg.jpg'),
-                                fit: BoxFit.cover,
-                              ),
-                              borderRadius:
-                              const BorderRadius.all(Radius.circular(50.0)),
-                              border: Border.all(
-                                color: Colors.white,
-                                width: 3.0,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-                Container(
-                  padding: EdgeInsets.all(22),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "CBC",
-                        style: GoogleFonts.openSans(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: const DecorationImage(
-                            image: AssetImage("assets/images/area_chart.png"),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        child: SfCartesianChart(
-                            primaryYAxis: const CategoryAxis(
-                              isVisible: false,
-                            ),
-                            series: <CartesianSeries>[
-                              SplineSeries<ChartData, int>(
-                                  dataSource: chartDataCbc,
-                                  // Type of spline
-                                  splineType: SplineType.cardinal,
-                                  cardinalSplineTension: 0.9,
-                                  xValueMapper: (ChartData data, _) => data.x,
-                                  yValueMapper: (ChartData data, _) => data.y)
-                            ]),
-                      ),
+                    value: value,
+                    items: [
+                      DropdownMenuItem(child: Text("Medical result last Week",style: AppTheme.informStyle,),value: -1,),
+                      DropdownMenuItem(child: Text("Medical result last Week",style: AppTheme.informStyle,),value: 1,),
+                      DropdownMenuItem(child: Text("Medical result last Week",style: AppTheme.informStyle,),value: 2,),
                     ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 12,
-                ),
-                Container(
-                  padding: EdgeInsets.all(22),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Hemoglobin",
-                        style: GoogleFonts.openSans(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.white70),
-                        child: SfCartesianChart(
-                            primaryYAxis: const CategoryAxis(
-                                labelStyle: TextStyle(
-                                    color: Colors.deepOrange,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500)),
-                            primaryXAxis: const CategoryAxis(
-                                labelStyle: TextStyle(
-                                    color: Color(0xff49A4AD),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500)),
-                            series: <CartesianSeries<ChartData, int>>[
-                              // Renders column chart
-                              ColumnSeries<ChartData, int>(
-                                  dataSource: chartDataHemo,
-                                  xValueMapper: (ChartData data, _) => data.x,
-                                  yValueMapper: (ChartData data, _) => data.y)
-                            ]),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+                    onChanged: (value){
+
+                    }),
+              ),
+              Text("Date",style: AppTheme.informStyle,),
+              Text("12/23/2023",style: AppTheme.informStyle.copyWith(
+                  color: AppColors.grey, fontSize: 14
+              ),
+              ),
+            ],
           ),
-        ));
+          SizedBox(height: height*0.01,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Test ",style: AppTheme.informStyle,),
+              Text("Result",style: AppTheme.informStyle,),
+              Text("Normal Page",style: AppTheme.informStyle),
+            ],
+          ),
+          SizedBox(height: height*0.01,),
+          Divider(
+            color: AppColors.subscribeColor,
+            thickness: 0.8,
+            height: 1,
+          ),
+          SizedBox(height: height*0.03,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              TextButton(
+                onPressed: (){
+                  Navigator.pushNamed(context, CBSScreen.routeName);
+                },
+                  child: Text("CBC ",style: AppTheme.informStyle,)),
+              Text("14",style: AppTheme.informStyle.copyWith(
+              color: AppColors.grey, fontSize: 14
+              ),),
+
+              Text("11 to 18 ",style: AppTheme.informStyle.copyWith(
+                  color: AppColors.grey, fontSize: 14
+              ),
+              ),
+            ],
+          ),
+          SizedBox(height: height*0.01,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("HemoGlopin",style: AppTheme.informStyle,),
+              Text("14",style: AppTheme.informStyle.copyWith(
+                  color: AppColors.grey, fontSize: 14
+              ),),
+
+              Text("13.8 to 17.2 ",style: AppTheme.informStyle.copyWith(
+                  color: AppColors.grey, fontSize: 14
+              ),
+              ),
+            ],
+          ),
+
+
+
+        ],
+      ),
+    );
   }
-}
-
-class ChartData {
-  ChartData(this.x, this.y);
-
-  final int x;
-  final double? y;
 }

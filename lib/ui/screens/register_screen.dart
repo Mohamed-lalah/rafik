@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rafik/ui/screens/home_screen.dart';
 
 import '../utlities/app_colors.dart';
 import '../utlities/app_theme.dart';
@@ -157,7 +158,9 @@ class RegisterScreen extends StatelessWidget {
                     backgroundColor:
                     MaterialStateProperty.all<Color>(AppColors.login_Button_Color),
                   ),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pushReplacementNamed(context, HomeScreen.routeName);
+                  },
                   child:Text("Register",style: AppTheme.login_Elevated_Button,) ),
             ),
             Row(

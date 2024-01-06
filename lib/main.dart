@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rafik/ui/screens/emergencty_tab_screen.dart';
 import 'package:rafik/ui/screens/home_screen.dart';
 import 'package:rafik/ui/screens/languages_screen.dart';
 import 'package:rafik/ui/screens/login_screeen.dart';
@@ -27,18 +28,18 @@ class MyApp extends StatelessWidget {
        MemoryScreen.routeName: (_)=>MemoryScreen(),
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        HomeScreen.routeName: (_)=>HomeScreen(),
-
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        VoiceScreen.routeName: (_)=>VoiceScreen(),
        RecordScreen.routeName: (_)=>RecordScreen(),
        LanguageScreen.routeName: (_)=>LanguageScreen(),
        ListWidget.routeName: (_)=>ListWidget(),
+       EmergencyTab.routeName:(_)=>EmergencyTab(),
 
 
 
 
      },
-      initialRoute: ListWidget.routeName,
+      initialRoute: EmergencyTab.routeName,
     );
   }
 }

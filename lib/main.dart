@@ -39,6 +39,24 @@ class MyApp extends StatelessWidget {
        InformsScreen.routeName:(_)=>InformsScreen(),
        EmergencyState.routeName:(_)=>EmergencyState(),
 
+       //navigation map
+       // register screen  ->  Login screen   or Home Screen
+       // Home screen bottom nav ->  Emergency tab
+       // Emergency tab  slide button at the bottom -> Emergency state
+       // inform tab
+       // inform tab (text CBC)-> CBC screen
+
+       // go to voice screen through its route name
+       // click on voice icon in voice screen -> voice record screen
+
+       // go to subscribe screen through it's route name
+       // click on menu icon on top of subscribe screen -> List Widget screen
+       // click on language on list widget screen -> Language Screen
+
+       // go to memory screen through it's route name
+       // click on upload photo button  -> Upload Photo screen
+       //  click on camera icon -> Upload Done screen
+
 
 
 

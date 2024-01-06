@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
        RegisterScreen.routeName: (_)=>RegisterScreen(),
        MemoryScreen.routeName: (_)=>MemoryScreen(),
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
+       InformsScreen.routeName:(_)=>InformsScreen(),
        HomeScreen.routeName: (_)=>HomeScreen(),
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        VoiceScreen.routeName: (_)=>VoiceScreen(),
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
        LanguageScreen.routeName: (_)=>LanguageScreen(),
        ListWidget.routeName: (_)=>ListWidget(),
        EmergencyTab.routeName:(_)=>EmergencyTab(),
-       InformsScreen.routeName:(_)=>InformsScreen(),
+
        EmergencyState.routeName:(_)=>EmergencyState(),
 
        //navigation map

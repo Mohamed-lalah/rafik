@@ -26,6 +26,9 @@ abstract class AppColors {
   static const Color dropDownColor= Color(0xff181059);
   static const Color subscribeColor= Color(0xff82D4DF);
   static const Color proColor= Color(0xffF6F5FA);
+  static const Color navColor = Color (0xffDAD7E0);
+  static const Color  backGroundColor = Color (0xffFFFFFF);
+  static const Color  rectColor = Color (0xffF29C35);
 
 
 }

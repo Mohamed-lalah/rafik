@@ -26,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return  Scaffold(
+      backgroundColor: AppColors.backGroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -355,22 +356,30 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget buildBottomNav() => Theme(
-    data: Theme.of(context).copyWith(canvasColor: Theme.of(context).primaryColor),
-    child: BottomNavigationBar(
-
-      currentIndex: currenttabindex,
-      onTap: (index){
-        currenttabindex= index;
-        setState(() {});
-      },
-      items: [
-        BottomNavigationBarItem(icon:Image.asset("assets/images/home 1x.png"),label: "home"),
-        BottomNavigationBarItem(icon:Image.asset("assets/images/setting1x.png"),label: "Emergency"),
-        BottomNavigationBarItem(icon:Image.asset("assets/images/informs 1x.png"),label: "Inform"),
-        BottomNavigationBarItem(icon:Image.asset("assets/images/message 1x.png"),label: "Message"),
-
-      ],
+  Widget buildBottomNav() => BottomNavigationBar(
+    unselectedItemColor: AppColors.navColor,
+    selectedItemColor: AppColors.login_Info_Color,
+    showSelectedLabels: true,
+    showUnselectedLabels: true,
+    backgroundColor: AppColors.white,
+    elevation: 10,
+    selectedLabelStyle: AppTheme.selectedItemStyle,
+    unselectedLabelStyle: AppTheme.selectedItemStyle.copyWith(
+      color: AppColors.navColor
     ),
+
+
+    currentIndex: currenttabindex,
+    onTap: (index){
+      currenttabindex= index;
+      setState(() {});
+    },
+    items: [
+      BottomNavigationBarItem(icon:Image.asset("assets/images/home 1x.png"),label: "Home"),
+      BottomNavigationBarItem(icon:Image.asset("assets/images/setting1x.png"),label: "Emergency"),
+      BottomNavigationBarItem(icon:Image.asset("assets/images/informs 1x.png"),label: "Inform"),
+      BottomNavigationBarItem(icon:Image.asset("assets/images/message 1x.png"),label: "Message"),
+
+    ],
   );
 }

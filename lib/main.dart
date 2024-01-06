@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:rafik/ui/screens/home_screen.dart';
 import 'package:rafik/ui/screens/login_screeen.dart';
 import 'package:rafik/ui/screens/memory_screen.dart';
+import 'package:rafik/ui/screens/record_screeen.dart';
 import 'package:rafik/ui/screens/register_screen.dart';
 import 'package:rafik/ui/screens/subscribe_plan_screen.dart';
+import 'package:rafik/ui/screens/voice_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,10 +25,13 @@ class MyApp extends StatelessWidget {
        MemoryScreen.routeName: (_)=>MemoryScreen(),
        SubscribeBlan.routeName: (_)=>SubscribeBlan(),
        HomeScreen.routeName: (_)=>HomeScreen(),
+       VoiceScreen.routeName: (_)=>VoiceScreen(),
+       RecordScreen.routeName: (_)=>RecordScreen(),
+
 
 
      },
-      initialRoute: HomeScreen.routeName,
+      initialRoute: VoiceScreen.routeName,
     );
   }
 }

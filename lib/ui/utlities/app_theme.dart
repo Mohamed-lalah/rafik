@@ -100,6 +100,19 @@ abstract class AppTheme {
           color:    AppColors.memory_button_color)
   );
 
+  static TextStyle selectedItemStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 10,
+          fontWeight: FontWeight.w600,
+          color:    AppColors.login_Info_Color)
+  );
+
+
+  static TextStyle minutesStyle = GoogleFonts.openSans(
+      textStyle: const TextStyle(fontSize: 22,
+          fontWeight: FontWeight.w300,
+          color:    AppColors.subscribeColor)
+  );
+
 
 
 
